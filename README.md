@@ -28,32 +28,41 @@ The list below lists the Balanced Accuracy, Precision, and Recall scores for eac
 
 ### Cluster Centroids Under Sampler
 
-* Balanced Accuracy score
-* Precision Score
-* Recall Score
+![Under](images/Under.PNG)
 
+* Balanced Accuracy score: 0.544
+* Precision Score: 0.01
+* Recall Score: 0.69
 
 ### SMOTEENN Over and Under Sampler
 
-* Balanced Accuracy score
-* Precision Score
-* Recall Score
+![SMOTEENN](images/SMOTEENN.PNG)
 
+* Balanced Accuracy score: 0.649
+* Precision Score: 0.01
+* Recall Score: 0.72
 
 ### Balanced Random Forest Classifier
 
-* Balanced Accuracy score
-* Precision Score
-* Recall Score
+![RF](images/RF.PNG)
+
+* Balanced Accuracy score: 0.789
+* Precision Score: 0.03
+* Recall Score: 0.70
 
 ### Easy Ensemble AdaBoost Classifier
 
-* Balanced Accuracy score
-* Precision Score
-* Recall Score
+![EE](images/EE.PNG)
 
-
-
+* Balanced Accuracy score: 0.935
+* Precision Score: 0.10
+* Recall Score: 0.92
 
 ## Summary
-Summary: Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
+The resampling methods had lower scores than the ensemble methods. The resampling methods all had precision score of .01. Meaning of all the customers the model predicted as high risk, only 1 % were actually high risk. The recall scores had a little more variation, but they were in a similar range with SMOTE having the lowest score of 0.63 and SMOTEENN had the highest at 0.72. Undersampling had the lowest accuracy score of 0.54, and SMOTE had the highest at 0.663.
+
+The ensemble methods had higher accuracy scores 0.789 and 0.935 for Random Forest and Easy Ensemble respectively. The precision scores were also higher, 0.03 and 0.10. The Easy Ensemble method had the highest Recall score at 0.92.
+
+The recall score is the most important to detecting risky loans since that helps to ensure that the method would detect a high percent of the actual high risk customers. The Easy Ensemble method had the highest recall score of all the methods tested indicating that this method detected 92% of all actual high risk customers. This method also had the highest precision score, but it is still low at 0.10. This indicates that out of all the customers the method identifies as high risk only 10% actually are. While this would help prevent high risk loans, it may screen out too many applicants.
+
+Based on this analysis I would recommend using the easy ensemble method. This should detect approximately 92% of high risk loans. It will over sceen, but this only accounts for approximately 5% of low risk loans.
